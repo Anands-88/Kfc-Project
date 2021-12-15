@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .container{
+        width: 100%;
+        height: 770px;
+        display: flex;
+    }
+
+    .option{
+        width: 20%;
+        height: 770px;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-left: 80px;
+    }
+
+    .menu{
+        width: 80%;
+        height: 770px;
+        margin-left: 10px;
+        overflow-y: auto;
+        max-height: 770px;
+    }
+
+    h1{
+        font-family: system-ui;
+        font-size: 45px;
+        line-height: 43px;
+    }
+
+    p.onHover{
+        font-size: 25px;
+        color: gray;
+        font-family: cursive;
+    }
+
+    .onHover:hover{
+        color: black;
+        font-family: fantasy    ;
+    }
+
+
+    #search{
+
+        margin-top: 50px;
+        margin-left: 30px;
+        width: 202px;
+        height: 25px;
+        border: 1px solid gray;
+        display: flex;
+        border-radius: 20px;
+        margin-bottom: 30px;
+    }
+
+
+    #bordericon:focus{
+        outline: none;
+    }
+
+  
+
+    #searchIcon{
+    margin-left: 10px;
+    margin-top: 5px;
+    }
+
+    hr{
+        color: black;
+        margin-bottom: 20px;
+    }
+
+    a{
+        font-family: sans-serif;
+        font-size: 30px;
+        line-height: 43px;
+        margin-left: 40px;
+    }
+
+    .container > div a:focus{
+        outline: none;
+    }
+
+    .kfcbuket,.kfctrending,.kfcburger,.kfcrice,.kfcsnack,.kfcbevarage{
+        display: grid;
+        height: 1800px;
+        margin-top:20px;
+        grid-template-columns: repeat(2,480px);
+        grid-template-rows: repeat(5,550px);
+        grid-gap: 20px;
+    }
+
+    .buketimage,.Trendingimage,.burgerimage,.riceimage,.snackimage,.bevarageimage{
+        margin-top: 20px;
+        margin-left: 30px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 20px;
+    }
+
+    .imagecontent{
+        width: 100%;
+        height: 300px;
+    }
+
+    .textcontent{
+        width: 100%;
+        height: 200px;
+    }
+
+    .photo{
+        width: 100%;
+        height: 100%;
+        border-start-end-radius: 20px;
+        border-start-start-radius: 20px;
+    }
+
+    .textcontent :nth-child(1){
+        font-size: 30px;
+    }
+
+    span{
+        margin-top: 20px;
+    }
+
+    button{
+        width: 200px;
+        font-size: 20px;
+        background-color: red;
+        color: white;
+        border-radius: 40px;
+        padding: 10px;
+        border: none;
+        margin-top:20px;
+        margin-left: 120px;        
+    }
+
+    .endpage{
+        width: 100%;
+        height: 300px;
+        border: 1px solid red;
+        display: flex;
+        background-color: #202124;
+
+    }
+
+    .endpagecontent{
+        width: 200px;
+        height:170px;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+
+    .endpagecontent p{ 
+        color: white;
+        font-size: 13px;
+        font-family: monospace;
+    }
+
+    .link{
+        color: white;
+        font-size: 13px;
+        margin-left: 0px;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="option">
+            <div>
+                <img src="https://online.kfc.co.in/static/media/Stripes_Small_OffersIcon.87fc6256.svg"/>
+            </div>
+            <h1>KFC MENU</h1>    
+            <p class="onHover "  onclick="myFunction()"> Buket Meal</p>
+            <p class="onHover "  onclick="mytrending()"> Trending</p>
+            <p class="onHover "  onclick="myburger()"> Burger</p>
+            <p class="onHover "  onclick="myrice()">Rice Bowls</p>
+            <p class="onHover "  onclick="mysnack()"> Snack</p>
+            <p class="onHover "  onclick="mybevarge()">Beverages</p>
+        </div>
+
+        <div class="menu">
+            <div id="search">
+                <div>
+                    <img id="searchIcon" src="https://online.kfc.co.in/static/media/searchIcon.0e00b33c.svg" alt="alert" ;/>
+                </div>
+
+                <div>
+                 <input type="text" placeholder="Search our menu"  id="bordericon"  style="border: none; margin-top: 5px; " onclick="searchitem()"/>
+                </div>
+            </div>
+
+           <hr>
+            <a tabindex="0" id="buketkfcmeal" style="border: none;">BUKET MEAL</a> 
+               
+            <div class="kfcbuket"> 
+                <div class="buketimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-32244-0.jpg?ver=4.94"/>
+                    </div>
+                    <div class="textcontent">
+                        <p1>Stay Home Bucket</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+
+
+                    </div>
+                </div>
+
+                <div class="buketimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-32256-0.jpg?ver=4.94"/>
+                        
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Family Feast</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 749.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="buketimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-33109-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>10pc Chipotle Fried Chicken </p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 449.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="buketimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-33108-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>5pc Chipotle Fried Chicken Meal
+                                                </p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="buketimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-33107-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>5pc Chipotle Fried Chicken</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 149.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="buketimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-33107-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>10 pc Chipotle Fried Chicken Strips</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 849.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <a  tabindex="0" id="Trendingkfcmeal" style="border: none;">TRENDING</a>
+            <div class="kfctrending"> 
+                <div class="Trendingimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-33116-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Super Snacker Combo</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="Trendingimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-33065-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Chick’n Wings Combo</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="Trendingimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-33066-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Classic Zinger Meal</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="Trendingimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-33117-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Chick'n Strips Solo Combo</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="Trendingimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-33068-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Chick'n Strips Solo Combo</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="Trendingimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-33118-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Chick'n Strips Solo Combo</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <a  tabindex="0" id="burgerkfcmeal" style="border: none;">BURGER</a>
+            <div class="kfcburger"> 
+                <div class="burgerimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-32576-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Stay Home Bucket</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 449.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="burgerimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-32573-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>2 Chicken Krisper Burgers</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 149.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="burgerimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-32573-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>2 Veg Krisper Burgers</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Veg_dot_Icon.2636651d.svg">&emsp13;&emsp13; Veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 349.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="burgerimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-32579-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Tandoori Zinger Burger</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 449.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="burgerimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-32230-41486.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Stay Home Bucket</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="burgerimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-32396-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Tandoori Zinger Burger</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <a tabindex="0" id="ricekfcmeal" style="border: none;">RICE BOWLS</a> 
+               
+            <div class="kfcrice"> 
+                <div class="riceimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-30666-40508.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Popcorn Rice Bowl</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 99.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="riceimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-31950-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Rice Duo Meal</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 299.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="riceimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-30666-40508.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Smoky Red Rice Bowl</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 189.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="riceimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-30666-40508.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Smoky Red Rice Bowl</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 349.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="riceimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-31950-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Veg Rice Bowl</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Veg_dot_Icon.2636651d.svg">&emsp13;&emsp13; Veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 449.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="riceimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-30666-40508.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Rice Bucket</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 149.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <a tabindex="0" id="snackkfcmeal" style="border: none;">SNACK </a> 
+               
+            <div class="kfcsnack"> 
+                <div class="snackimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-32841-42014.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Coffee Mousse Cake</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="snackimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-32842-42015.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Choco Mud Pie</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 149.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="snackimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-31984-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Chicken & Fries Bucket</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 429.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="snackimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-33122-0.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Chicken & Fries Bucket</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 349.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="snackimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-30678-40515.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Chicken & Fries Bucket</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 409.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="snackimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-30675-40512.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Mingles Bucket</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Non_veg_dot_Icon.1b0fc8fd.svg">&emsp13;&emsp13; Non-veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <a tabindex="0" id="bevaragekfcmeal" style="border: none;">BEVERAGES </a> 
+               
+            <div class="kfcbevarage"> 
+                <div class="bevarageimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-30683-40520.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Pepsi Black Can 330 ml</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Veg_dot_Icon.2636651d.svg">&emsp13;&emsp13; Veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 49.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="bevarageimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-31373-41015.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Mirinda Can 330 ml</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Veg_dot_Icon.2636651d.svg">&emsp13;&emsp13; Veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 149.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="bevarageimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-31374-41016.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Mirinda Can 330 ml</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Veg_dot_Icon.2636651d.svg">&emsp13;&emsp13; Veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 449.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="bevarageimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-31376-41018.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Pepsi PET</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Veg_dot_Icon.2636651d.svg">&emsp13;&emsp13; Veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 459.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="bevarageimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-31375-41017.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Pepsi Can 330 ml</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Veg_dot_Icon.2636651d.svg">&emsp13;&emsp13; Veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 419.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="bevarageimage">
+                    <div class="imagecontent">
+                        <img class="photo" src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/A-30684-40521.jpg?ver=4.94"/>
+
+                    </div>
+                    <div class="textcontent">
+                                                <p1>Red Bull Energy Drink</p1>
+                        <p style="margin: 0px; margin-top: 8px;" >
+                        <img  alt="photo" src="https://online.kfc.co.in/static/media/Veg_dot_Icon.2636651d.svg">&emsp13;&emsp13; Veg 
+                        </p>
+                        <p style="font-size: 24px; margin: 0px; margin-top: 8px;">  &#x20b9; 429.00</p>
+                        <p style="color: gray  ; margin: 0px; margin-top: 10px;">Save 21% & enjoy 4pc Hot & Crispy Chicken, 4 Hot Wings, 6 chicken strips & 2 delicious dips [serves 3]</p>
+                        <button onclick="addcard()"> Add to cart
+                        <img src="https://online.kfc.co.in/static/media/Icon_Add_to_Cart.58b87a9b.svg" alt="photo" class="add-to-cart-Icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="endpage">
+        <div class="endpagecontent">
+            <img style="padding: 60px;" src="//images.ctfassets.net/wtodlh47qxpt/25FSYFuEtGct8NSrtpKe6d/b602f6fe0bf294e6a6dff5d7648bf594/KFC_Logo.svg" alt="KFC LOGO" class="kfc-footer-logo">
+        </div>
+        <div class="endpagecontent">
+            <p>KFC FOOD</p>
+            <p>MENU</p>
+            <p>ORDER</p>
+            <p>GIFT CARD</p>
+        </div>
+
+        <div class="endpagecontent">
+            <p>SUPPORT</p>
+            <p>GET HELP</p>
+            <p>CONTACT US</p>
+            <p>KFC FEEDBACK</p>
+        </div>
+        <div class="endpagecontent">
+            <p>LEAGAL</p>
+            <p>TERMS AND CONDITION</p>
+            <p>PRIVACY POLICY</p>
+            <p>Disclaimer</p>
+        </div>
+
+        
+        <div class="endpagecontent">
+            <p>KFC INDIA</p>
+            <p>ABOUT KFC</p>
+            <p>KFC CARE</p>
+            <p>CAREERS</p>
+            <P>OUR GOLDEN POST</P>
+        </div>
+
+
+        <div class="endpagecontent">
+            <img src="//images.ctfassets.net/wtodlh47qxpt/6qgKpWUOIsrIiazhk3cdmF/d60b4c20be69bab1f939bf33348b67e9/Find_KFC.svg" alt="">
+            <a class="link" target="_blank" tabindex="0" href="https://restaurants.kfc.co.in/">Find a KFC</a>
+        </div>
+
+        <div class="endpagecontent">
+            <a class="link" target="_blank" href="https://play.google.com/store/apps/details?id=com.yum.kfc">
+            <img src="//images.ctfassets.net/wtodlh47qxpt/6BdZsyjLn64c06uCIE73d1/fb530f5d5231533b049463f6c7e8a2b1/google_play.svg" alt="Google Play"></a>
+        </div>
+
+        <div class="endpagecontent">
+            <a class="link" target="_blank" href="https://apps.apple.com/in/app/kfc-india/id915824379">
+            <img src="//images.ctfassets.net/wtodlh47qxpt/em3mcMuAdXWlgucSJiTbS/d3ae7e51ed101d829e459355e255c47f/apple.svg" alt="Apple Store"></a>
+        </div>
+
+    </div>
+
+
+   
+</body>
+</html>
+
+<script>
+    function myFunction() {
+      document.getElementById("buketkfcmeal").focus();
+    }
+
+    function mytrending() {
+      document.getElementById("Trendingkfcmeal").focus();
+    }
+
+    function myburger() {
+       document.getElementById("burgerkfcmeal").focus();
+     }
+
+     function myrice() {
+       document.getElementById("ricekfcmeal").focus();
+     }
+
+     function mysnack() {
+       document.getElementById("snackkfcmeal").focus();
+     }
+
+     function mybevarge() {
+       document.getElementById("bevaragekfcmeal").focus();
+     }
+
+     function addcard() {
+
+            
+        window.location.href = "kfcaddcard.html"
+    }
+
+
+    function searchitem(){
+       var match =  document.getElementById("bordericon").value
+       var rematch = document.getElementsByTagName("p1").value
+       if( match == rematch){
+           alert()
+       }
+    }
+    </script>
