@@ -12,7 +12,9 @@ function cash(){
 // before submit, checking if card , all fields are filled or 
 function checkOut(){
 
-    if (document.querySelector("#option > button").style.background == "black")
+    var obj = {}; // to push to local storage
+
+    if (document.querySelector("#cred").style.background == "black")
     {
         var name = document.querySelector("#name")
         var card = document.querySelector("#cardnum")
@@ -39,12 +41,23 @@ function checkOut(){
         }
         else
         {  
+             obj = {
+            mode:"Credit/Debit Card" // storing mode of payment info
+            }
+            localStorage.setItem("mode",JSON.stringify(obj))
+
             window.location.href = "checkout.html"
         } 
         
     }
     
     else {
+        obj = {
+            mode :"Cash"
+        }
+        localStorage.setItem("mode",JSON.stringify(obj))
         window.location.href = "checkout.html"
     }
+
+    
 }
