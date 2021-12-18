@@ -29,22 +29,22 @@
         <div id = "infobox">
             <div>DELIVERY INFO</div>
             <div class = "address">
-                <div>Address*</div>
+                <div>Address</div>
                 <input type="text" placeholder="Aprtment, suite, unit, building, floor">
             </div>
 
             <div>CONTACT INFO</div>
             <div id = "contact">
                 <div>
-                    <div>Full Name*</div>
+                    <div>Full Name</div>
                     <input type="text">
                 </div>
                 <div>
-                    <div>Phone Number*</div>
+                    <div>Phone Number</div>
                     <input type="text" name="" id="">
                 </div>
                 <div>
-                    <div>Email*</div>
+                    <div>Email</div>
                     <input type="text"id="">
                 </div>
             </div>
@@ -55,17 +55,21 @@
         </div>
 
         <div id = "pricebox">
-            <h3>1 ITEM</h3>
+            <h3> ITEM</h3>
+            <div>
+                <input type="text" id = "coupon" placeholder="Apply coupon code here">
+                <button onclick="couponclick()">Enter</button>
+            </div>
             <div id = "bill">
                 <div>Subtotal</div>
-                <div></div>
+                <div id = "price"></div>
                 <div>GST</div>
-                <div></div>
+                <div id = "gst"></div>
                 <div>Resturant Handling(Incl.taxes)</div>
-                <div></div>
+                <div id = "handling">₹35</div>
             </div>
             <hr class = "line">
-            <button id = "continue" onclick = "paid()">Continue to Payment</button>
+            <button id = "continue" onclick = "paid()">Continue to Payment <span></span></button>
         </div>
         
     </div>

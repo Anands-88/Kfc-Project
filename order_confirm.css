@@ -67,9 +67,8 @@
 }
 
 .details {
-  border-top: 1px solid rgb(209, 208, 208);
-  border-left: 1px solid rgb(187, 186, 186);
-  height: 170%;
+  border: 1px solid rgb(209, 208, 208);
+  height: 150%;
   font-family: sans;
   padding-left: 5%;
   padding-right: 5%;
@@ -108,7 +107,17 @@
   padding-right: 10%;
 }
 
-.amount::before {
+.price::before {
+  content: "₹";
+}
+
+.gst::before {
+  content: "₹";
+}
+.handling::before {
+  content: "₹";
+}
+.total::before {
   content: "₹";
 }
 
@@ -116,28 +125,31 @@
   font-size: 16px;
   color: black;
   font-weight: 800;
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 #bill > div:nth-child(8) {
-  height: 33px;
+  height: 32px;
   border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 #bill > div:nth-child(9) {
+  width: 150px;
   height: 30px;
   font-size: 16px;
   color: black;
   font-weight: 800;
   padding-top: 9%;
-  border-top: 1px solid rgb(150, 150, 150);
 }
 
 #mode {
-  height: 50px;
-  font-size: 13px;
+  width: 120px;
+  height: 30px;
+  font-size: 12px;
   color: rgb(85, 84, 84);
   margin-top: 19%;
   padding-right: 10%;
+  margin-left: -43%;
 }
 
 @media only screen and (min-width: 376px) and (max-width: 768px) {
@@ -159,6 +171,9 @@
     border-left: 1px solid rgb(187, 186, 186);
     height: 140%;
     font-family: sans;
+  }
+  #mode {
+    margin-left: 20%;
   }
 }
 

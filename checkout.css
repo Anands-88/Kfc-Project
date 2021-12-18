@@ -149,7 +149,7 @@ a {
 #pricebox {
   border-radius: 10px;
   width: 280px;
-  height: 225px;
+  height: 250px;
   border-top: 1px solid rgb(194, 191, 191);
   margin-left: 4%;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
@@ -160,14 +160,30 @@ a {
   font-family: "Roboto", sans-serif;
   padding-left: 4%;
   font-size: 16px;
-  border-bottom: 1px solid rgb(190, 188, 188);
-  height: 40px;
+  height: 20px;
+}
+
+#pricebox > h3 + div {
+  border-bottom: 1px solid rgb(165, 163, 163);
+  height: 20px;
+  padding: 5% 6%;
+  margin-top: -3%;
+  background: rgb(240, 151, 173);
+}
+
+#pricebox > div > button {
+  border-radius: 10px;
+}
+#pricebox > div > button:hover {
+  background: rgb(241, 86, 14);
+  color: white;
 }
 
 #bill {
   display: grid;
+  margin-top: 6%;
   grid-template-columns: 73% 23%;
-  grid-template-rows: repeat(3, 30px);
+  grid-template-rows: repeat(3, 25px);
   font-family: "Open Sans", sans-serif;
   font-size: 11px;
   color: rgb(0, 0, 0);
@@ -190,9 +206,13 @@ hr {
   width: 85%;
   border-radius: 15px;
   height: 35px;
-  background-color: rgb(218, 215, 215);
+  background-color: rgb(240, 36, 97);
   border: currentColor;
-  color: rgb(70, 70, 70);
+  color: rgb(255, 255, 255);
+}
+
+#continue > span {
+  margin-left: 3%;
 }
 
 @media only screen and (min-width: 376px) and (max-width: 768px) {
@@ -288,13 +308,29 @@ hr {
   #pricebox {
     border-radius: 10px;
     width: 95%;
-    height: 255px;
+    height: 330px;
     margin-left: 1%;
     margin-top: 2%;
   }
 
   #pricebox > h3 {
     font-size: 20px;
+  }
+
+  #pricebox > h3 + div {
+    height: 26px;
+    padding: 2% 6%;
+    margin-top: -1%;
+  }
+
+  #pricebox > div > input {
+    width: 80%;
+    height: 25px;
+  }
+
+  #pricebox > div > button {
+    width: 15%;
+    height: 30px;
   }
 
   #bill {
@@ -437,10 +473,26 @@ hr {
   #pricebox {
     border-radius: 10px;
     width: 95%;
-    height: 230px;
+    height: 250px;
     border-top: 1px solid rgb(194, 191, 191);
     margin-left: 4%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
       rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+  #pricebox > h3 + div {
+    height: 26px;
+    padding: 2% 6%;
+    margin-top: -1%;
+  }
+
+  #pricebox > div > input {
+    width: 80%;
+    height: 22px;
+  }
+
+  #pricebox > div > button {
+    width: 15%;
+    height: 25px;
   }
 }
