@@ -145,8 +145,13 @@ display: flex;
 <body>
 	<div class="nav">
 		<img height="50" src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg" alt="">
+<<<<<<< HEAD
 		<button class="button" type="button">MENU</button>
 		<button class="button" type="button"> <a href="deals.html"></a> DEALS</button>
+=======
+		<button class="button" type="button" onclick="menu()">MENU</button>
+		<button class="button" type="button" onclick="deals()">DEALS</button>
+>>>>>>> 8de276ff8411766674d69187f33f58f37698d9cb
 	</div>
 	<div class="startorder">
 		<h1 class="hh1">LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN</h1>
@@ -247,3 +252,12 @@ display: flex;
 </div>
 </body>
 </html>
+
+<script>
+function menu(){
+	window.location.href="kfc.html"
+}
+function deals(){
+	window.location.href="deals.html"
+}
+</script>
