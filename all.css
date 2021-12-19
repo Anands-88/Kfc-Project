@@ -1,8 +1,9 @@
-.Root {
+.Cont {
 	margin: 5vw 33vw;
+	/* margin: auto; */
 }
 
-.rootOtp {
+.ContOtp {
 	margin: 8vw 33vw;
 }
 
@@ -37,10 +38,6 @@
 .otpSubtitle {
 	margin: 3% auto 0%;
 }
-
-/* .otpSubtitle b {
-	color: #494949;
-} */
 
 .phoneNumber , .firstName , .emailAddress{
 	border: none;
