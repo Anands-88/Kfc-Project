@@ -9,18 +9,11 @@ function modepayment(){  // Importing mode of paymnet from payment.html thrugh l
 }
 modepayment()
 
-var kfcCart = JSON.parse(localStorage.getItem("userCart")) || []; // importing price of product from localstorage
-var count = 0;   // counting total items in a cart and price below
-var totalprice = 0; 
+var kfcCart = JSON.parse(localStorage.getItem("kfccart")) || [];
+// {count: 1, product_price: 129, tax: 6.45, handling: 35, total: 170}
+document.querySelector("#pricebox > h3").insertAdjacentText("afterbegin",kfcCart.count)
 
-kfcCart.map(function(elem,index){
-    count++
-    totalprice = totalprice + Number(elem.price);
-    
-})
-
-document.querySelector("#pricebox > h3").insertAdjacentText("afterbegin",count)
-
+var totalprice = kfcCart.product_price;
 givevalues(totalprice)
 
 function couponclick(){
