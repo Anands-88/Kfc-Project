@@ -77,13 +77,14 @@
 			font-size: 18px;
 			margin: 4px 2px;
 			cursor: pointer;
+			background-color: white;
 		  }
 		  .startnow{
+			width:120px;
+			height: 50px;
 			 border-radius: 25px;
 			 color: white;
 			 background-color: red;
-			 padding-left: 10px;
-			 padding-right: 10px;
 			text-align: center;
 			text-decoration: none;
 			
@@ -138,6 +139,22 @@ display: flex;
         font-size: 13px;
         margin-left: 0px;
     }
+
+	.signup{
+		width:120px;
+			height: 50px;
+			 border-radius: 25px;
+			 color: black;
+			 background-color: white;
+			text-align: center;
+			text-decoration: none;
+			font-style: bold;
+			font-size: 12px;
+			cursor: pointer;
+			margin-left: 70%;
+			font-size:22px;
+			border:none
+	}
 		
 
 	</style>
@@ -148,6 +165,8 @@ display: flex;
 	
 		<button class="button" type="button" onclick="menu()">MENU</button>
 		<button class="button" type="button" onclick="deals()">DEALS</button>
+		<button class="signup" type="button" onclick="signup()">Sign up</button>
+
 	</div>
 	<div class="startorder">
 		<h1 class="hh1">LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN</h1>
@@ -255,5 +274,9 @@ function menu(){
 }
 function deals(){
 	window.location.href="deals.html"
+}
+
+function signup(){
+	window.location.href="signup.html"
 }
 </script>
