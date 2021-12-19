@@ -10,7 +10,7 @@ function modepayment(){  // Importing mode of paymnet from payment.html thrugh l
 modepayment()
 
 var kfcCart = JSON.parse(localStorage.getItem("userCart")) || []; // importing price of product from localstorage
-var count = 0; // counting total items in a cart and price below
+var count = 0;   // counting total items in a cart and price below
 var totalprice = 0; 
 
 kfcCart.map(function(elem,index){

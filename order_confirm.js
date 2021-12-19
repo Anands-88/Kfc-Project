@@ -18,3 +18,4 @@ document.getElementById("item").insertAdjacentText("afterbegin",kfcbill.count)
 function homepage(){
     window.location.href = "kfclandingpage.html"
 }
+
