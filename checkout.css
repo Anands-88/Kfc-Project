@@ -119,20 +119,19 @@
   padding-left: 3px;
 }
 
-#contact > div > div {
+#contact > div > div:first-child {
   color: rgb(65, 65, 65);
   font-size: 10px;
   padding-top: 20px;
 }
-#contact > div > input {
+#contact > div > div:nth-child(2) {
   background-color: #f8f7f5;
-  border: 0;
   border-bottom: 1px solid rgb(0, 0, 0);
-  font-size: 11px;
+  font-size: 10px;
   width: 95%;
-  height: 30px;
+  height: 20px;
+  padding-top: 4px;
   font-family: "Open Sans", sans-serif;
-  outline: none; /*to hide the input box */
 }
 
 #anchor {
@@ -292,11 +291,11 @@ hr {
     font-size: 16px;
   }
 
-  #contact > div > div {
+  #contact > div > div:first-child {
     font-size: 15px;
   }
 
-  #contact > div > input {
+  #contact > div > div:nth-child(2) {
     font-size: 15px;
   }
 
@@ -450,13 +449,13 @@ hr {
     padding-left: 3px;
   }
 
-  #contact > div > div {
+  #contact > div > div :first-child {
     color: rgb(65, 65, 65);
     font-size: 15px;
     padding-top: 20px;
   }
 
-  #contact > div > input {
+  #contact > div > div:nth-child(2) {
     border-bottom: 1px solid rgb(0, 0, 0);
     font-size: 15px;
     width: 95%;

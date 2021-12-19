@@ -7,8 +7,6 @@ modepayment()
 
 var kfcbill = JSON.parse(localStorage.getItem("kfccart"))
 
-console.log(kfcbill)
-
 document.getElementsByClassName("price")[0].textContent = kfcbill.product_price
 document.getElementsByClassName("gst")[0].textContent = kfcbill.tax
 document.getElementsByClassName("handling")[0].textContent = kfcbill.handling
@@ -19,3 +17,6 @@ function homepage(){
     window.location.href = "kfclandingpage.html"
 }
 
+var addrss = JSON.parse(localStorage.getItem("address"))
+console.log(addrss)
+document.querySelector("#input").textContent =  addrss.address

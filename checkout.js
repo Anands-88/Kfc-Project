@@ -33,8 +33,8 @@ function couponclick(){
     givevalues(totalprice)
 }
 
-function givevalues(totalprice){
 
+function givevalues(totalprice){
     // Adding total price and gst to HTML Page 
    var price =  document.getElementById("price").textContent = totalprice;
     // inserting rupee before the totalprice; 
@@ -56,8 +56,12 @@ function givevalues(totalprice){
     localStorage.setItem("kfccart",JSON.stringify(obj))
 }
 
-console.log(document.querySelector("#anchor > a").textContent)
 function paid(){
+
+    var addrss = document.querySelector("#inputAddress").value
+    console.log(addrss)
+    var addObj = {address:addrss}
+    localStorage.setItem("address",JSON.stringify(addObj))
 
     if (document.querySelector("#anchor > a").textContent == "Cash")
     {
@@ -67,5 +71,12 @@ function paid(){
     {
         window.location.href = "card_otp.html"
     }
-    
 }
+
+var phonenumber = JSON.parse(localStorage.getItem("userList"))
+document.querySelector("#phone").textContent = phonenumber[phonenumber.length-1].cus_mobile
+
+var name_email = JSON.parse(localStorage.getItem("detailList"))
+document.querySelector("#name").textContent = name_email[name_email.length-1].name
+document.querySelector("#email").textContent = name_email[name_email.length-1].email
+
