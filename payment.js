@@ -12,7 +12,7 @@ function cash(){
 // before submit, checking if card , all fields are filled or 
 function checkOut(){
 
-    var obj = {}; // to push to local storage
+    var obj = {};  // to push to local storage
 
     if (document.querySelector("#cred").style.background == "black")
     {

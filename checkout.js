@@ -1,3 +1,6 @@
+function backtocart(){ // link to cart
+    window.location.href = "cart.html"
+}
 
 function modepayment(){  // Importing mode of paymnet from payment.html thrugh local storage
 
@@ -7,7 +10,7 @@ function modepayment(){  // Importing mode of paymnet from payment.html thrugh l
 modepayment()
 
 var kfcCart = JSON.parse(localStorage.getItem("userCart")) || []; // importing price of product from localstorage
-var count = 0; // counting total items in a cart and price below
+var count = 0;   // counting total items in a cart and price below
 var totalprice = 0; 
 
 kfcCart.map(function(elem,index){
@@ -30,8 +33,8 @@ function couponclick(){
     givevalues(totalprice)
 }
 
-function givevalues(totalprice){
 
+function givevalues(totalprice){
     // Adding total price and gst to HTML Page 
    var price =  document.getElementById("price").textContent = totalprice;
     // inserting rupee before the totalprice; 
@@ -53,8 +56,27 @@ function givevalues(totalprice){
     localStorage.setItem("kfccart",JSON.stringify(obj))
 }
 
-
 function paid(){
 
-    window.location.href = "order_confirm.html"
+    var addrss = document.querySelector("#inputAddress").value
+    console.log(addrss)
+    var addObj = {address:addrss}
+    localStorage.setItem("address",JSON.stringify(addObj))
+
+    if (document.querySelector("#anchor > a").textContent == "Cash")
+    {
+        window.location.href = "order_confirm.html"
+    }
+    else
+    {
+        window.location.href = "card_otp.html"
+    }
 }
+
+var phonenumber = JSON.parse(localStorage.getItem("userList"))
+document.querySelector("#phone").textContent = phonenumber[phonenumber.length-1].cus_mobile
+
+var name_email = JSON.parse(localStorage.getItem("detailList"))
+document.querySelector("#name").textContent = name_email[name_email.length-1].name
+document.querySelector("#email").textContent = name_email[name_email.length-1].email
+

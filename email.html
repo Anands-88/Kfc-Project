@@ -12,7 +12,7 @@
 <body>
 
     <body>
-        <div class="Root">
+        <div class="Cont">
             <form>
                 <div class="loginForm">
                     <div class="sign_in_header">Sign In / Sign up</div>
@@ -40,11 +40,11 @@
                     <div class="orRight"></div>
 
                 </div>
-                <div class="skipBtnDiv">
-                    <form id="kc-form-login">
-
-                        <input type="Submit" class="skipBtn" id="skipBtn" name="skipfornow" value="Skip, Ask Me Later">
-                    </form>
+                
+                    <div class="skipBtnDiv">
+                        <button class="skipBtn" id="skipBtn">Skip, Continue As Guest</button>
+            
+            
 
                 </div>
             </div>
@@ -69,5 +69,14 @@
          detail.push(list);
     localStorage.setItem("detailList", JSON.stringify(detail));
      }
+
+     document.querySelector("#submitBtn").addEventListener("click",function(){
+        window.location.href="kfclandingpage.html"
+    })
+
+
+    document.querySelector("#skipBtn").addEventListener("click",function(){
+        window.location.href="kfclandingpage.html"
+    })
  </script>
 </html>

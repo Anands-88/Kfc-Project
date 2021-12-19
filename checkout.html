@@ -12,8 +12,8 @@
 </head>
 <body>
     <div id="kfcheader">
-        <button>Back to Cart</button>
-        <img id = "kfc" src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg" alt="">
+        <button onclick="backtocart()">Back to Cart</button>
+        <a href="kfclandingpage.html"><img id = "kfc" src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg" alt=""></a>
         <img id = "account" src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg" alt="">
         <h6>Account</h6>
         </div>
@@ -30,22 +30,22 @@
             <div>DELIVERY INFO</div>
             <div class = "address">
                 <div>Address</div>
-                <input type="text" placeholder="Aprtment, suite, unit, building, floor">
+                <input id = "inputAddress" type="text" placeholder="Aprtment, suite, unit, building, floor">
             </div>
 
             <div>CONTACT INFO</div>
             <div id = "contact">
                 <div>
                     <div>Full Name</div>
-                    <input type="text">
+                    <div id = "name"></div>
                 </div>
                 <div>
                     <div>Phone Number</div>
-                    <input type="text" name="" id="">
+                    <div id = "phone"></div>
                 </div>
                 <div>
                     <div>Email</div>
-                    <input type="text"id="">
+                    <div id = "email"></div>
                 </div>
             </div>
             <div>PAYMENT</div>

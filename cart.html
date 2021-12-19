@@ -1,129 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="cart.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KFC</title>
 </head>
-<style>
-    body{
-        background-color: white;
-        font-family: sans-serif;
-        margin: 0;
-    }
-    .header{
-        width: 100%;
-        height: 150px;
-        border: 2px solid black;
-    }
-    .header .navigation{
-        margin-top: 2%;
-        margin-left: 90px;
-        border: red 2px solid;
-        height: 100px;
-        width: 88%;
-    }
-    .flex{
-        display: flex;
-    }
-    .header .navigation .left{
-        height: 100%;
-        width: 35%;
-        border: green 2px solid;
-    }
-    .header .navigation .left a{
-        text-align: top;
-        margin-left: 100px;
-        margin-top: -20px;
-        text-decoration: none;
-        color: black;
-        font-size: 15px;
-        font-weight: 600;
-    }
-    #kfc-logo{
-        margin-top: 20px;
-        border: 1px solid black;
-    }
-    .header .navigation .right{
-        border: 1px solid black;
-        height: 100%;
-        width: 30%;
-        margin-left: 510px;
-        align-items: center;
-    }
-    #user-logo{
-        margin-top: 15px;
-        height: 30px;
-    }
-    #bucket{
-        margin-top: 10px;
-        height: 50px;
-        align-items: right;
-        margin-left: 20px;
-    }
-    .header .navigation .right a{
-        text-align: top;
-        margin-left: 30px;
-        /* margin-top: -20px; */
-        text-decoration: none;
-        color: black;
-        font-size: 15px;
-        font-weight: 600;
-        /* border: 2px solid red; */
-    }
-    .center{
-        border: 2px blueviolet solid;
-        height: 500px;
-        width: 90%;
-        margin: auto;
-    }
-    .center .left{
-        border: 1px solid red;
-        height: 500px;
-        width: 65%;
-    }
-    .center .left .top{
-        height: 5%;
-        width: 100%;
-    }
-    .center .right{
-        border: 1px solid red;
-        margin-left: 5%;
-        width: 30%;
-        height: 500px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;;
-    }
-    .shead{
-        width: 100%;
-        height: 90px;
-        background-color: black;
-    }
-</style>
 <body>
-    <div class="header">
-        <div class="navigation flex">
-            <div class="left">
-                <img src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg" alt="kfc logo" id="kfc-logo">
-                <a href="menu.html">Menu</a> 
-                <a href="Deals.html">Deals</a>
-            </div>
-            <div class="right flex">
-                <img src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg" alt="user-logo" id="user-logo">
-                <a href="signin.html">SignIn</a>
-               <img src="https://images.ctfassets.net/wtodlh47qxpt/6qtBVFuno7pdwOQ9RIvYm9/d13e9b7242980972cf49beddde2cc295/bucket_cart_icon.svg" alt="bucket" id="bucket"></a>
-            </div>
-            </div>
-            </div>
-            <div class="shead"></div>
-            <div class="center flex">
-                <div class="left">
-                    <div class="top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAeCAYAAAB5c901AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABNSURBVHgB7c9BDQAgAMPAgQ4c4F8KDvABFuBHSe+9LGmZ6SsXWkY52b3yW/M5A+kMpDOQzkA6A+kMpDOQzkA6A+kMpDOQzkA6A+kMpNu9MQhKmC+cDgAAAABJRU5ErkJggg==" alt=""></div>
-                    <div class="top"><h1>My Cart</h1></div>
-                </div>
-                <div class="right"></div>
-            </div>
-
+    <div id="kfcheader">
+        <div class = "left">
+            <a href="kfclandingpage.html"> <img id = "kfc" src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg" alt=""></a>
+            <H6> <a href="kfc.html">Menu</a></H6>
+            <H6><a href="deals.html">Deals</a></H6>
+        </div>
+        <div class = "right">
+            <img src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg" alt="">
+            <h6>Account</h6>
+            <h5></h5>
+            <div id = "cover"></div>
+        </div>
     </div>
+    
+    <div class = "blackBar"></div>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAeCAYAAAB5c901AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABNSURBVHgB7c9BDQAgAMPAgQ4c4F8KDvABFuBHSe+9LGmZ6SsXWkY52b3yW/M5A+kMpDOQzkA6A+kMpDOQzkA6A+kMpDOQzkA6A+kMpNu9MQhKmC+cDgAAAABJRU5ErkJggg==" alt="">
+    <H2>MY CART</H2>
+
+    <div id = "body">
+        <div id = "cart"></div>
+        <div id = "pricebox">
+            <h3> ITEM</h3>
+            <hr>
+            <div id = "bill">
+                <div>Subtotal</div>
+                <div id = "price"></div>
+                <div>GST</div>
+                <div id = "gst"></div>
+                <div>Resturant Handling(Incl.taxes)</div>
+                <div id = "handling">₹35</div>
+            </div>
+            <button id = "continue" onclick = "checkout()">Checkout<span></span></button>
+        </div>
+    </div>
+    
+    
 </body>
 </html>
+<script src=cart.js></script>

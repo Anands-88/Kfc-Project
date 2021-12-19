@@ -63,12 +63,12 @@
 .confirmation > h1:last-child {
   font-family: sans;
   font-size: 35px;
-  margin-left: 19%;
+  margin-left: 21%;
 }
 
 .details {
   border: 1px solid rgb(209, 208, 208);
-  height: 150%;
+  height: 170%;
   font-family: sans;
   padding-left: 5%;
   padding-right: 5%;

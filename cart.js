@@ -1,6 +1,7 @@
-var kfcCart = JSON.parse(localStorage.getItem("userCart")) || [];
+var kfcCart = JSON.parse(localStorage.getItem("product")) || [];
 
 setupPrice(kfcCart)
+
 // Adding all values from local storage of product list  of customer
 kfcCart.map(function(elem,index){
 
@@ -31,7 +32,7 @@ kfcCart.map(function(elem,index){
 
     document.getElementsByClassName("remove")[index].addEventListener("click",function ()
     {
-        event.target.parentNode.parentNode.remove()
+        Event.target.parentNode.parentNode.remove()
         kfcCart.splice(index,1)
         
         localStorage.setItem("userCart",JSON.stringify(kfcCart))
@@ -50,7 +51,8 @@ function setupPrice(kfcCart)
         totalprice = totalprice + Number(elem.price);
     })
     
-    document.querySelector(".right > h5").textContent = totalprice;
+    var total = totalprice + totalprice * 5 / 100;
+    document.querySelector(".right > h5").textContent = total;
 
     givevalues(totalprice)
 }
@@ -80,3 +82,7 @@ function givevalues(totalprice){
     console.log(obj)
 }
 
+function checkout(){
+
+    window.location.href = "checkout.html"
+}
