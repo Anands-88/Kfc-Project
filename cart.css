@@ -114,6 +114,9 @@ img {
   padding: 5% 0% 0% 5%;
   font-size: 13px;
 }
+.content > div:nth-child(2) {
+  padding-top: 3%;
+}
 
 .content > h4 {
   margin-top: 30px;
@@ -121,13 +124,6 @@ img {
 
 .content > h4::before {
   content: "₹";
-}
-
-.content > button {
-  font-size: 12px;
-  margin-top: 13px;
-  border: currentColor;
-  border-bottom: 2px solid black;
 }
 
 #pricebox {
@@ -264,13 +260,6 @@ hr {
     content: "₹";
   }
 
-  .content > button {
-    font-size: 12px;
-    margin-top: 13px;
-    border: currentColor;
-    border-bottom: 2px solid black;
-  }
-
   #pricebox {
     width: 60%;
     height: 280px;
@@ -390,13 +379,6 @@ hr {
 
   .content > h4::before {
     content: "₹";
-  }
-
-  .content > button {
-    font-size: 12px;
-    margin-top: 13px;
-    border: currentColor;
-    border-bottom: 2px solid black;
   }
 
   #pricebox {

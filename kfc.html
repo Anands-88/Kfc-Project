@@ -100,7 +100,7 @@
     .buketimage,.Trendingimage,.burgerimage,.riceimage,.snackimage,.bevarageimage{
         margin-top: 20px;
         margin-left: 30px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         border-radius: 20px;
     }
 
@@ -176,7 +176,7 @@
                 <img src="https://online.kfc.co.in/static/media/Stripes_Small_OffersIcon.87fc6256.svg"/>
             </div>
             <h1>KFC MENU</h1>    
-            <p class="onHover "  onclick="myFunction()"> Buket Meal</p>
+            <p class="onHover "  onclick="myFunction()"> Bucket Meal</p>
             <p class="onHover "  onclick="mytrending()"> Trending</p>
             <p class="onHover "  onclick="myburger()"> Burger</p>
             <p class="onHover "  onclick="myrice()">Rice Bowls</p>
@@ -266,7 +266,7 @@ var arr=JSON.parse(localStorage.getItem("Item")) || [];
 
 
     let obj =  [
-        {title:"BUKET MEAL" , target:"buketkfcmeal" , data:[
+        {title:"BUCKET MEAL" , target:"buketkfcmeal" , data:[
             {title: "Stay Home Bucket",
             price: 179,
             category:"Non-veg",
@@ -649,6 +649,7 @@ var arr=JSON.parse(localStorage.getItem("Item")) || [];
 
     //     for (let index = 0; index<obj.length; index++) {
 
+<<<<<<< HEAD
     //         if (index==catid) {
     //             for (let i = 0; i < obj[index]['data'].length; i++) {
     //                 if(i==proid){
@@ -663,6 +664,19 @@ var arr=JSON.parse(localStorage.getItem("Item")) || [];
     //     // localStorage.setItem("Item" ,JSON.stringify(arr));
 
     // } 
+=======
+            if (index==catid) {
+                for (let i = 0; i < obj[index]['data'].length; i++) {
+                    if(i==proid){
+                        localStorage.setItem("product",JSON.stringify( obj[index]['data'][i]))
+                        break;
+                    }
+                }
+            }
+        }
+        window.location.href = "cart.html"
+        // localStorage.setItem("Item" ,JSON.stringify(arr));
+>>>>>>> ed7d0534674bf8f26f8bbddeb196c746c11ec60f
 
 
 
