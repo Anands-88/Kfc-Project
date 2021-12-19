@@ -15,3 +15,6 @@ document.getElementsByClassName("handling")[0].textContent = kfcbill.handling
 document.getElementsByClassName("total")[0].textContent = kfcbill.total
 document.getElementById("item").insertAdjacentText("afterbegin",kfcbill.count)
 
+function homepage(){
+    window.location.href = "kfclandingpage.html"
+}

@@ -1,3 +1,6 @@
+function backtocart(){ // link to cart
+    window.location.href = "cart.html"
+}
 
 function modepayment(){  // Importing mode of paymnet from payment.html thrugh local storage
 
@@ -53,8 +56,16 @@ function givevalues(totalprice){
     localStorage.setItem("kfccart",JSON.stringify(obj))
 }
 
-
+console.log(document.querySelector("#anchor > a").textContent)
 function paid(){
 
-    window.location.href = "order_confirm.html"
+    if (document.querySelector("#anchor > a").textContent == "Cash")
+    {
+        window.location.href = "order_confirm.html"
+    }
+    else
+    {
+        window.location.href = "card_otp.html"
+    }
+    
 }
