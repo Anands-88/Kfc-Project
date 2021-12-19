@@ -1,56 +1,39 @@
 var kfcCart = JSON.parse(localStorage.getItem("product")) || [];
 
+addProduct()
 setupPrice(kfcCart)
-
 // Adding all values from local storage of product list  of customer
-kfcCart.map(function(elem,index){
-
+function addProduct()
+{
     var item_box = document.createElement("div")
     item_box.setAttribute("class","itemBox")
 
     var image_box = document.createElement("div")
     var image = document.createElement("img")
-    image.setAttribute("src",kfcCart[index].image)
+    image.setAttribute("src",kfcCart.img)
 
     var contents = document.createElement("div")
     contents.setAttribute("class","content")
     var item_name = document.createElement("div")
-    item_name.textContent = kfcCart[index].name;
+    item_name.textContent = kfcCart.title;
+
+    var category = document.createElement("div")
+    category.textContent = kfcCart.category;
 
     var price = document.createElement("h4")
-    price.textContent = kfcCart[index].price;
+    price.textContent = kfcCart.price;
     price.setAttribute("class","price")
 
-    var remove = document.createElement("button")
-    remove.textContent = "Remove";
-    remove.setAttribute("class","remove")
-
     image_box.append(image)
-    contents.append (item_name,price,remove)
+    contents.append (item_name,category,price)
     item_box.append(image_box,contents)
     document.querySelector("#cart").append(item_box)
+}
 
-    document.getElementsByClassName("remove")[index].addEventListener("click",function ()
-    {
-        Event.target.parentNode.parentNode.remove()
-        kfcCart.splice(index,1)
-        
-        localStorage.setItem("userCart",JSON.stringify(kfcCart))
-        
-        setupPrice(kfcCart)
-    })
 
-})
-
-var count = 0; 
 function setupPrice(kfcCart)
-{ 
-    var totalprice = 0;
-    kfcCart.map(function(elem){
-        count++
-        totalprice = totalprice + Number(elem.price);
-    })
-    
+{
+    var totalprice = kfcCart.price;
     var total = totalprice + totalprice * 5 / 100;
     document.querySelector(".right > h5").textContent = total;
 
@@ -58,7 +41,6 @@ function setupPrice(kfcCart)
 }
 
 function givevalues(totalprice){
-    var cnt = count;
     // Adding total price and gst to HTML Page 
    var price =  document.getElementById("price").textContent = totalprice;
     // inserting rupee before the totalprice; 
@@ -71,15 +53,15 @@ function givevalues(totalprice){
     document.querySelector("#continue > span").insertAdjacentText("afterbegin", "₹")
 
     var obj = {
-        count:cnt,
+        count:1,
         product_price:price,
         tax:gst,
         handling:35,
         total:total
     }
     localStorage.setItem("kfccart",JSON.stringify(obj))
-
-    console.log(obj)
+    
+    document.querySelector("#pricebox > h3").insertAdjacentText("afterbegin",obj.count);
 }
 
 function checkout(){
