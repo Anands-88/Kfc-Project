@@ -248,8 +248,8 @@
 
     <div id="kfcheader">
         <div class = "left">
-            <a href="kfclandingpage.html"> <img id = "kfc" src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg" alt=""></a>
-            <H6> <a href="kfc.html">Menu</a></H6>
+            <a href="landingpage.html"> <img id = "kfc" src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg" alt=""></a>
+            <H6> <a href="kfcmenu.html">Menu</a></H6>
             <H6><a href="deals.html">Deals</a></H6>
         </div>
         <div class = "right">
@@ -731,31 +731,15 @@ var arr=JSON.parse(localStorage.getItem("Item")) || [];
 
 
      
-    // function  addcard(event){
-    //     console.log(event.getAttribute("val"));
-    //     var ides =  event.getAttribute("val");
-    //     var catid = ides.split("_")[0];
-    //     var proid = ides.split("_")[1];
+    function  addcard(event){
+        console.log(event.getAttribute("val"));
+        var ides =  event.getAttribute("val");
+        var catid = ides.split("_")[0];
+        var proid = ides.split("_")[1];
 
 
-    //     for (let index = 0; index<obj.length; index++) {
+        for (let index = 0; index<obj.length; index++) {
 
-<<<<<<< HEAD
-    //         if (index==catid) {
-    //             for (let i = 0; i < obj[index]['data'].length; i++) {
-    //                 if(i==proid){
-    //                     localStorage.setItem("product",JSON.stringify( obj[index]['data'][i]))
-    //                     break;
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     // window.location.href = "kfcaddcard.html"
-    //     window.location.href= "cart.html"
-    //     // localStorage.setItem("Item" ,JSON.stringify(arr));
-
-    // } 
-=======
             if (index==catid) {
                 for (let i = 0; i < obj[index]['data'].length; i++) {
                     if(i==proid){
@@ -765,10 +749,10 @@ var arr=JSON.parse(localStorage.getItem("Item")) || [];
                 }
             }
         }
-        window.location.href = "cart.html"
+        window.location.href = "carts.html"
         // localStorage.setItem("Item" ,JSON.stringify(arr));
->>>>>>> ed7d0534674bf8f26f8bbddeb196c746c11ec60f
 
+    } 
 
 
 
