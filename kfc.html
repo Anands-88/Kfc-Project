@@ -640,28 +640,30 @@ var arr=JSON.parse(localStorage.getItem("Item")) || [];
 
 
      
-    function  addcard(event){
-        console.log(event.getAttribute("val"));
-        var ides =  event.getAttribute("val");
-        var catid = ides.split("_")[0];
-        var proid = ides.split("_")[1];
+    // function  addcard(event){
+    //     console.log(event.getAttribute("val"));
+    //     var ides =  event.getAttribute("val");
+    //     var catid = ides.split("_")[0];
+    //     var proid = ides.split("_")[1];
 
 
-        for (let index = 0; index<obj.length; index++) {
+    //     for (let index = 0; index<obj.length; index++) {
 
-            if (index==catid) {
-                for (let i = 0; i < obj[index]['data'].length; i++) {
-                    if(i==proid){
-                        localStorage.setItem("product",JSON.stringify( obj[index]['data'][i]))
-                        break;
-                    }
-                }
-            }
-        }
-        window.location.href = "kfcaddcard.html"
-        // localStorage.setItem("Item" ,JSON.stringify(arr));
+    //         if (index==catid) {
+    //             for (let i = 0; i < obj[index]['data'].length; i++) {
+    //                 if(i==proid){
+    //                     localStorage.setItem("product",JSON.stringify( obj[index]['data'][i]))
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     // window.location.href = "kfcaddcard.html"
+    //     window.location.href= "cart.html"
+    //     // localStorage.setItem("Item" ,JSON.stringify(arr));
 
-    } 
+    // } 
+
 
 
 
