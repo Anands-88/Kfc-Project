@@ -1,5 +1,5 @@
 # Kfc-Project
-Hllo Everyone, 
+Hello Everyone, 
 In this Project, We made clone of KFC India where you can Fast food items. 
 <br/>
 ## Teams Members
