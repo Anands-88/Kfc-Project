@@ -14,7 +14,7 @@ document.getElementsByClassName("total")[0].textContent = kfcbill.total
 document.getElementById("item").insertAdjacentText("afterbegin",kfcbill.count)
 
 function homepage(){
-    window.location.href = "kfclandingpage.html"
+    window.location.href = "index.html"
 }
 
 var addrss = JSON.parse(localStorage.getItem("address"))

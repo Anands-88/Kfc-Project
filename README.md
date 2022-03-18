@@ -1,7 +1,18 @@
 # Kfc-Project
-Hello Everyone, 
-In this Project, We made clone of KFC India where you can Fast food items. 
+## Hello Everyone 👋,
+ ### In this Project, We made clone of KFC India where you can buy Fast food items. Its collaborative project consist of 🖐 Members, completed this in 6️⃣ days.
 <br/>
+
+Home Page
+<img src="./homekfc.png">
+
+<br/>
+<br/>
+<br/>
+Menu page
+<img src="./kfc.png">
+
+
 ## Teams Members
 
 - Ajinkya Aher https://github.com/AjinkyaAher5
